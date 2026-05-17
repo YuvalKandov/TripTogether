@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors - slightly lighter for dark mode readability -->
+    <color name="primary_50">#1A2196F3</color>
+
+    <!-- Surface Colors -->
+    <color name="surface">#1E1E1E</color>
+    <color name="surface_variant">#2C2C2C</color>
+    <color name="background">#121212</color>
+    <color name="card_background">#1E1E1E</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#E0E0E0</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="text_hint">#707070</color>
+
+    <!-- Other UI Colors -->
+    <color name="divider">#333333</color>
+    <color name="ripple_light">#1AFFFFFF</color>
+
+</resources>

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    tools:context=".ui.TripsFragment">
+
+    <!-- Header Section -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/trips_LBL_title"
+        style="@style/TextAppearance.TripTogether.Headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_md"
+        android:layout_marginTop="@dimen/spacing_md"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:text="Trips"
+        app:layout_constraintEnd_toStartOf="@id/trips_CV_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Profile Avatar -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/trips_CV_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/trips_LBL_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/trips_LBL_title">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/trips_IMG_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/surface_variant"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/trips_NSV_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/trips_LBL_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Today Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/trips_CV_today"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation"
+                tools:visibility="visible">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_today_card_gradient"
+                    android:padding="@dimen/spacing_md">
+
+                    <!-- Ongoing Chip -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/trips_CHIP_ongoing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ongoing"
+                        android:textColor="@color/primary_700"
+                        android:textSize="12sp"
+                        app:chipBackgroundColor="@color/white"
+                        app:chipCornerRadius="@dimen/day_chip_corner_radius"
+                        app:chipMinHeight="28dp"
+                        app:chipStrokeWidth="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- Trip Name -->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/trips_LBL_today_trip_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/text_on_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/trips_CHIP_ongoing"
+                        tools:text="Prague Weekend" />
+
+                    <!-- Day X of Y -->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/trips_LBL_today_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textColor="@color/primary_100"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/trips_LBL_today_trip_name"
+                        tools:text="Day 2 of 4" />
+
+                    <!-- Activities Count Row -->
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/trips_IMG_today_clock"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:src="@drawable/ic_clock"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/trips_LBL_today_day"
+                        app:tint="@color/text_on_primary" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/trips_LBL_today_activities_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_xs"
+                        android:textColor="@color/text_on_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/trips_IMG_today_clock"
+                        app:layout_constraintStart_toEndOf="@id/trips_IMG_today_clock"
+                        app:layout_constraintTop_toTopOf="@id/trips_IMG_today_clock"
+                        tools:text="2 activities today" />
+
+                    <!-- Next Activity -->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/trips_LBL_today_next"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textColor="@color/primary_100"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/trips_IMG_today_clock"
+                        tools:text="Next: Charles Bridge Tour at 10:00" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Active Trips Section Header -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/trips_LBL_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="Your Trips"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Active Trips List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trips_RV_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:nestedScrollingEnabled="false"
+                android:paddingStart="@dimen/spacing_md"
+                android:paddingEnd="@dimen/spacing_md"
+                tools:listitem="@layout/trip_item" />
+
+            <!-- Empty State (for when there are no trips at all) -->
+            <LinearLayout
+                android:id="@+id/trips_LL_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xl"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/spacing_xl"
+                android:paddingBottom="@dimen/spacing_xl"
+                android:visibility="gone"
+                tools:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:alpha="0.5"
+                    android:src="@drawable/ic_trips"
+                    app:tint="@color/text_hint" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_md"
+                    android:text="No trips yet"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_sm"
+                    android:text="Create your first trip or join one with a code"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- Past Trips Section Header -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/trips_LBL_past_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_marginTop="@dimen/spacing_lg"
+                android:text="Past Trips"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <!-- Past Trips List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trips_RV_past"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:nestedScrollingEnabled="false"
+                android:paddingStart="@dimen/spacing_md"
+                android:paddingEnd="@dimen/spacing_md"
+                android:visibility="gone"
+                tools:listitem="@layout/trip_item"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- FABs -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/trips_FAB_join"
+        style="@style/Widget.TripTogether.FAB.Mini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_sm"
+        android:contentDescription="Join trip with code"
+        android:src="@drawable/ic_join"
+        app:layout_constraintBottom_toTopOf="@id/trips_FAB_add"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/trips_FAB_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_md"
+        android:contentDescription="Create new trip"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

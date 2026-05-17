@@ -1,0 +1,49 @@
+# Built application files
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Java / Kotlin
+*.class
+.kotlin/
+
+# Generated files
+bin/
+gen/
+out/
+release/
+
+# Gradle
+.gradle/
+build/
+/build
+/app/build
+
+# Local configuration (contains absolute SDK paths)
+local.properties
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+.navigation/
+captures/
+
+# External native build
+.externalNativeBuild
+.cxx/
+
+# Keystore / signing
+*.jks
+*.keystore
+
+# Logs / profiling
+*.log
+*.hprof
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Firebase config (each developer provides their own)
+google-services.json

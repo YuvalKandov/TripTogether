@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Legacy colors (keep for compatibility) -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Colors - Blue (Travel/Sky theme) -->
+    <color name="primary_50">#E3F2FD</color>
+    <color name="primary_100">#BBDEFB</color>
+    <color name="primary_200">#90CAF9</color>
+    <color name="primary_300">#64B5F6</color>
+    <color name="primary_400">#42A5F5</color>
+    <color name="primary_500">#2196F3</color>
+    <color name="primary_600">#1E88E5</color>
+    <color name="primary_700">#1976D2</color>
+    <color name="primary_800">#1565C0</color>
+
+    <!-- Surface Colors -->
+    <color name="surface">#FAFAFA</color>
+    <color name="surface_variant">#F5F5F5</color>
+    <color name="background">#FFFFFF</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Status Chip Colors -->
+    <color name="status_planning">#FFA726</color>
+    <color name="status_ongoing">#66BB6A</color>
+    <color name="status_completed">#BDBDBD</color>
+
+    <!-- Other UI Colors -->
+    <color name="divider">#E0E0E0</color>
+    <color name="ripple_light">#1A000000</color>
+    <color name="owner_badge">#7C4DFF</color>
+    <color name="error">#E53935</color>
+
+    <!-- Legacy purple (keeping for owner badge compatibility) -->
+    <color name="purple_300">#BA68C8</color>
+
+    <!-- Social Colors -->
+    <color name="heart_color">#E53935</color>
+</resources>

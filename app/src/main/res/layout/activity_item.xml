@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_CL_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_sm"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Timeline Line Top -->
+    <View
+        android:id="@+id/activity_VIEW_lineTop"
+        android:layout_width="@dimen/timeline_line_width"
+        android:layout_height="0dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toTopOf="@id/activity_CV_badge"
+        app:layout_constraintStart_toStartOf="@id/activity_CV_badge"
+        app:layout_constraintEnd_toEndOf="@id/activity_CV_badge"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Timeline Badge (Tag Icon) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/activity_CV_badge"
+        android:layout_width="@dimen/timeline_badge_size"
+        android:layout_height="@dimen/timeline_badge_size"
+        app:cardBackgroundColor="@color/primary_50"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/primary_200"
+        app:strokeWidth="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/activity_CV_card">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/activity_LBL_tag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="18sp"
+            tools:text="🍔" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Timeline Line Bottom -->
+    <View
+        android:id="@+id/activity_VIEW_lineBottom"
+        android:layout_width="@dimen/timeline_line_width"
+        android:layout_height="0dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/activity_CV_badge"
+        app:layout_constraintEnd_toEndOf="@id/activity_CV_badge"
+        app:layout_constraintTop_toBottomOf="@id/activity_CV_badge" />
+
+    <!-- Activity Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/activity_CV_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sm"
+        app:cardBackgroundColor="@color/surface"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
+        app:rippleColor="@color/ripple_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/activity_CV_badge"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_md">
+
+            <!-- Time -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activity_LBL_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/spacing_xs"
+                android:textColor="@color/primary_600"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_clock"
+                app:drawableTint="@color/primary_400"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="08:00 - 09:00" />
+
+            <!-- Checkbox -->
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/activity_CB_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                app:buttonTint="@color/status_ongoing"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Title -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activity_LBL_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/activity_CB_completed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_LBL_time"
+                tools:text="Breakfast at Hotel" />
+
+            <!-- Location -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activity_LBL_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawablePadding="@dimen/spacing_xs"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                app:drawableStartCompat="@drawable/ic_location"
+                app:drawableTint="@color/text_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_LBL_title"
+                tools:text="Hotel Restaurant" />
+
+            <!-- Description -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/activity_LBL_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/text_hint"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_LBL_location"
+                tools:text="Continental breakfast included in hotel package" />
+
+            <!-- Memory Badge -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/activity_CV_memoryBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/primary_50"
+                app:cardCornerRadius="@dimen/chip_corner_radius"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/activity_LBL_description"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/spacing_sm"
+                    android:paddingVertical="@dimen/spacing_xs">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        app:srcCompat="@drawable/ic_camera"
+                        app:tint="@color/primary_600" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/activity_LBL_memoryCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_xs"
+                        android:textColor="@color/primary_600"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        tools:text="3 photos" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

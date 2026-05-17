@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.TripTogether" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary_500</item>
+        <item name="colorPrimaryVariant">@color/primary_700</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+
+        <!-- Secondary color -->
+        <item name="colorSecondary">@color/primary_400</item>
+        <item name="colorSecondaryVariant">@color/primary_600</item>
+        <item name="colorOnSecondary">@color/text_on_primary</item>
+
+        <!-- Background and surface -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Error color -->
+        <item name="colorError">@color/error</item>
+
+        <!-- Status bar and navigation bar -->
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/card_background</item>
+
+        <!-- Component styles -->
+        <item name="floatingActionButtonStyle">@style/Widget.TripTogether.FAB</item>
+        <item name="bottomNavigationStyle">@style/Widget.TripTogether.BottomNav</item>
+    </style>
+</resources>

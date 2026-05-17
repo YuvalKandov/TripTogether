@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trip_CV_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_sm"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:rippleColor="@color/ripple_light">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/trip_card_min_height">
+
+        <!-- Thumbnail -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/trip_CV_thumbnail"
+            android:layout_width="@dimen/trip_card_thumbnail_width"
+            android:layout_height="0dp"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/trip_IMG_cover"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/surface_variant"
+                android:scaleType="centerCrop"
+                tools:src="@android:drawable/ic_menu_gallery" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Trip Name -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/trip_LBL_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/trip_card_content_padding"
+            android:layout_marginTop="@dimen/trip_card_content_padding"
+            android:layout_marginEnd="@dimen/trip_card_content_padding"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/trip_CV_thumbnail"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Summer Trip to Europe" />
+
+        <!-- Dates with Calendar Icon -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/trip_LBL_dates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/trip_card_content_padding"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:layout_marginEnd="@dimen/trip_card_content_padding"
+            android:drawablePadding="@dimen/spacing_xs"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/ic_calendar"
+            app:drawableTint="@color/text_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/trip_CV_thumbnail"
+            app:layout_constraintTop_toBottomOf="@id/trip_LBL_name"
+            tools:text="Jun 15 - Jun 30, 2024" />
+
+        <!-- Members Count with Icon -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/trip_LBL_members"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/trip_card_content_padding"
+            android:layout_marginTop="@dimen/spacing_xs"
+            android:layout_marginBottom="@dimen/trip_card_content_padding"
+            android:drawablePadding="@dimen/spacing_xs"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/ic_members"
+            app:drawableTint="@color/text_hint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/trip_CV_thumbnail"
+            app:layout_constraintTop_toBottomOf="@id/trip_LBL_dates"
+            tools:text="4 members" />
+
+        <!-- Status Chip -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/trip_CHIP_status"
+            style="@style/Widget.TripTogether.Chip.Status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/trip_card_content_padding"
+            app:layout_constraintBottom_toBottomOf="@id/trip_LBL_members"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/trip_LBL_members"
+            tools:text="Ongoing" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

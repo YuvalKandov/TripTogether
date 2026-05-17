@@ -1,0 +1,108 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.TripTogether" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/primary_500</item>
+        <item name="colorPrimaryVariant">@color/primary_700</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+
+        <!-- Secondary color -->
+        <item name="colorSecondary">@color/primary_400</item>
+        <item name="colorSecondaryVariant">@color/primary_600</item>
+        <item name="colorOnSecondary">@color/text_on_primary</item>
+
+        <!-- Background and surface -->
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceVariant">@color/surface_variant</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Error color -->
+        <item name="colorError">@color/error</item>
+
+        <!-- Status bar and navigation bar -->
+        <item name="android:statusBarColor">@color/primary_600</item>
+        <item name="android:navigationBarColor">@color/card_background</item>
+
+        <!-- Component styles -->
+        <item name="floatingActionButtonStyle">@style/Widget.TripTogether.FAB</item>
+        <item name="bottomNavigationStyle">@style/Widget.TripTogether.BottomNav</item>
+    </style>
+
+    <style name="Theme.TripTogether" parent="Base.Theme.TripTogether" />
+
+    <!-- Custom FAB Style -->
+    <style name="Widget.TripTogether.FAB" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/primary_500</item>
+        <item name="tint">@color/white</item>
+        <item name="elevation">6dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.TripTogether.FAB</item>
+    </style>
+
+    <!-- Mini FAB Style (for secondary actions) -->
+    <style name="Widget.TripTogether.FAB.Mini" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="backgroundTint">@color/card_background</item>
+        <item name="tint">@color/primary_500</item>
+        <item name="elevation">4dp</item>
+        <item name="fabSize">mini</item>
+    </style>
+
+    <!-- Bottom Navigation Style -->
+    <style name="Widget.TripTogether.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">@color/card_background</item>
+        <item name="itemIconTint">@color/bottom_nav_colors</item>
+        <item name="itemTextColor">@color/bottom_nav_colors</item>
+        <item name="elevation">8dp</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.TripTogether.BottomNav.ActiveIndicator</item>
+    </style>
+
+    <style name="Widget.TripTogether.BottomNav.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/primary_50</item>
+    </style>
+
+    <!-- Card Shape -->
+    <style name="ShapeAppearance.TripTogether.Card" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- FAB Shape -->
+    <style name="ShapeAppearance.TripTogether.FAB" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Text Appearances -->
+    <style name="TextAppearance.TripTogether.Headline" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Status Chip Styles -->
+    <style name="Widget.TripTogether.Chip.Status" parent="Widget.Material3.Chip.Assist">
+        <item name="chipMinHeight">24dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="chipCornerRadius">12dp</item>
+        <item name="chipStrokeWidth">0dp</item>
+    </style>
+
+    <!-- Day Selector Chip Style -->
+    <style name="Widget.TripTogether.Chip.Day" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_day_background</item>
+        <item name="android:textColor">@color/chip_day_text</item>
+        <item name="chipMinHeight">36dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="chipCornerRadius">18dp</item>
+        <item name="chipStrokeWidth">0dp</item>
+    </style>
+
+    <!-- Full Screen Dialog Style -->
+    <style name="Theme.TripTogether.FullScreenDialog" parent="Theme.Material3.DayNight.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="colorPrimary">@color/primary_500</item>
+    </style>
+</resources>

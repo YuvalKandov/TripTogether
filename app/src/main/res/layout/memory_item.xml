@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/memory_CV_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_md"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_md">
+
+        <!-- Activity Icon Background -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/memory_CV_activityIcon"
+            android:layout_width="@dimen/memory_activity_icon_size"
+            android:layout_height="@dimen/memory_activity_icon_size"
+            app:cardBackgroundColor="@color/primary_50"
+            app:cardCornerRadius="@dimen/spacing_sm"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/memory_LBL_activityEmoji"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="16sp"
+                tools:text="🚡" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Activity Name -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/memory_LBL_activityName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_sm"
+            android:layout_marginEnd="@dimen/spacing_sm"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/memory_CV_activityIcon"
+            app:layout_constraintEnd_toStartOf="@id/memory_BTN_more"
+            app:layout_constraintStart_toEndOf="@id/memory_CV_activityIcon"
+            app:layout_constraintTop_toTopOf="@id/memory_CV_activityIcon"
+            tools:text="Gondola ride" />
+
+        <!-- More Options Button -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/memory_BTN_more"
+            android:layout_width="@dimen/icon_size_medium"
+            android:layout_height="@dimen/icon_size_medium"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="More options"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_more"
+            app:tint="@color/text_hint" />
+
+        <!-- Memory Text -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/memory_LBL_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:lineSpacingExtra="2dp"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/memory_CV_activityIcon"
+            tools:text="The view from the top was unreal. Worth the wait in line!" />
+
+        <!-- Photos Container - GridLayout for flexible photo layout -->
+        <LinearLayout
+            android:id="@+id/memory_LL_photosContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/memory_LBL_text"
+            tools:visibility="visible">
+
+            <!-- Photo 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/memory_CV_photo1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/memory_photo_grid_height"
+                android:layout_marginEnd="@dimen/spacing_xs"
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/memory_photo_corner_radius"
+                app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/memory_IMG_photo1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/ic_camera" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Photo 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/memory_CV_photo2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/memory_photo_grid_height"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/memory_photo_corner_radius"
+                app:cardElevation="0dp"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/memory_IMG_photo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/ic_camera" />
+
+                <!-- Photo count badge (for 3+ photos) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/memory_CV_morePhotos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#80000000"
+                    app:cardCornerRadius="@dimen/memory_photo_corner_radius"
+                    app:cardElevation="0dp"
+                    tools:visibility="gone">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/memory_LBL_morePhotos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="+1" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/memory_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:background="@color/divider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/memory_LL_photosContainer" />
+
+        <!-- Footer: User Info + Social Actions -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/memory_footer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/memory_divider">
+
+            <!-- User Avatar -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/memory_CV_userPhoto"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                app:cardBackgroundColor="@color/primary_100"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/memory_IMG_userPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_profile"
+                    app:tint="@color/primary_400" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- User Name -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/memory_LBL_userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/memory_CV_userPhoto"
+                app:layout_constraintStart_toEndOf="@id/memory_CV_userPhoto"
+                app:layout_constraintTop_toTopOf="@id/memory_CV_userPhoto"
+                tools:text="Yuval" />
+
+            <!-- Timestamp -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/memory_LBL_timestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:textColor="@color/text_hint"
+                android:textSize="13sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/memory_LBL_userName"
+                app:layout_constraintStart_toEndOf="@id/memory_LBL_userName"
+                tools:text="18:40" />
+
+            <!-- Like Button -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/memory_BTN_like"
+                android:layout_width="@dimen/icon_size_small"
+                android:layout_height="@dimen/icon_size_small"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Like"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/memory_LBL_likeCount"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/memory_LBL_timestamp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:srcCompat="@drawable/empty_heart" />
+
+            <!-- Like Count -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/memory_LBL_likeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:layout_marginEnd="@dimen/spacing_md"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/memory_BTN_comment"
+                app:layout_constraintStart_toEndOf="@id/memory_BTN_like"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="12" />
+
+            <!-- Comment Button -->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/memory_BTN_comment"
+                android:layout_width="@dimen/icon_size_small"
+                android:layout_height="@dimen/icon_size_small"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Comment"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/memory_LBL_commentCount"
+                app:layout_constraintStart_toEndOf="@id/memory_LBL_likeCount"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_comment" />
+
+            <!-- Comment Count -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/memory_LBL_commentCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xs"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/memory_BTN_comment"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

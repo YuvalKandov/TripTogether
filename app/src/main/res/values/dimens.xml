@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Legacy dimensions (keep for compatibility) -->
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="small_padding">8dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="default_elevation">8dp</dimen>
+    <dimen name="default_corner_radius">12dp</dimen>
+    <dimen name="default_card_margin">10dp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="cover_image_height">200dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+
+    <!-- New Spacing System -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <!-- New Card Styling -->
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+
+    <!-- Avatar Sizes -->
+    <dimen name="avatar_size_medium">56dp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="icon_size_small">20dp</dimen>
+    <dimen name="icon_size_medium">24dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+
+    <!-- Trip Card (New Design) -->
+    <dimen name="trip_card_thumbnail_width">120dp</dimen>
+    <dimen name="trip_card_content_padding">12dp</dimen>
+    <dimen name="trip_card_min_height">100dp</dimen>
+
+    <!-- Status Chip -->
+    <dimen name="chip_height">24dp</dimen>
+    <dimen name="chip_corner_radius">12dp</dimen>
+
+    <!-- Day Selector Chip -->
+    <dimen name="day_chip_height">36dp</dimen>
+    <dimen name="day_chip_corner_radius">18dp</dimen>
+
+    <!-- Timeline -->
+    <dimen name="timeline_line_width">2dp</dimen>
+    <dimen name="timeline_badge_size">40dp</dimen>
+
+    <!-- Memory Photo Thumbnail -->
+    <dimen name="memory_photo_size">80dp</dimen>
+
+    <!-- Memory Card (New Design) -->
+    <dimen name="memory_photo_grid_height">180dp</dimen>
+    <dimen name="memory_photo_corner_radius">12dp</dimen>
+    <dimen name="memory_activity_icon_size">32dp</dimen>
+</resources>
