@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="screenshots/splash.png" alt="TripTogether" width="220">
-</p>
-
 # TripTogether
 
 A collaborative trip-planning Android app. Multiple users join the same trip with a 6-character invite code, then together build a day-by-day plan of activities and capture memories with photos. Everything syncs across all members in real time.
@@ -10,9 +6,9 @@ Built as a final project for the UI Development course at Afeka College.
 
 ## Screenshots
 
-| Plan a trip together | Capture memories together |
-|:---:|:---:|
-| <img src="screenshots/plan.png" width="280"> | <img src="screenshots/journal.png" width="280"> |
+| Welcome | Plan a trip together | Capture memories together |
+|:---:|:---:|:---:|
+| <img src="screenshots/splash.png" width="240"> | <img src="screenshots/plan.png" width="240"> | <img src="screenshots/journal.png" width="240"> |
 
 ## Features
 
